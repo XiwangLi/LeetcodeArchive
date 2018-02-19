@@ -27,7 +27,7 @@ class Solution(object):
                     continue
                 self.dfs_Perm(res, path + [nums[i]], nums[:i] + nums[i+1:])  
 				                  # pick nums[i]     the remaining nums
-# This mathed is very good, as it changed the nums to be nums[:i] + nums[i+1:], then we can have another method to avoid this.
+# This mathed is not very good, as it changed the nums to be nums[:i] + nums[i+1:], then we can have another method to avoid this.
 # By add another list to record that this value has been taken/used or not
 
 class Solution(object):
