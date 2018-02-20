@@ -14,7 +14,7 @@ class Solution(object):
     def DFSpathSum(self, root, res):
         if not root: 
             return 0
-        left = max(self.DFSpathSum(root.left, res), 0)  #results from the left subtree
+        left = max(self.DFSpathSum(root.left, res), 0)  #results from the left subtree. Use Max(...) to get rid of the negative sum
         right = max(self.DFSpathSum(root.right, res), 0) #results from the right subtree
         res[0] = max(res[0], left + right + root.val)  # update the final results      
         return max(left, right) + root.val  #return to the parent node
