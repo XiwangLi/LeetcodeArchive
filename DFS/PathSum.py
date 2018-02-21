@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Path Sum I
 
 class Solution(object):
