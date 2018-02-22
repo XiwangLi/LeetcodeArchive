@@ -48,9 +48,7 @@ class Node(object):
             if is_all_none: break
             level = next_level
             to_prints.append(to_print)
-        
-        #max_val_digits = max([max([len(str(v)) for v in r]) for r in to_prints])
-        #print max_val_digits
+
         
         to_prints = to_prints[:-1] # remove the last row with only '#'
         to_pretty_prints = []
