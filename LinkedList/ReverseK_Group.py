@@ -1,5 +1,5 @@
 # 25. Reverse Nodes in k-Group
-
+# Reversion way is easy to think of. We reverse the first k node and get the rest to a "next recursion" problem
 class Solution(object):
     def reverseKGroup(self, head, k):
         """
