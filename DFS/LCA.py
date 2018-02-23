@@ -22,15 +22,15 @@ def LCA(root, a, b):
 def LCA_para(root, a, b):
 	h_a = height(root, a)
 	h_b = height(root, b)
-if h_a < h_b:
-	h_a, h_b = h_b, h_a
+	if h_a < h_b:
+		h_a, h_b = h_b, h_a
 
-for _ in range(h_a - h_b):
-	node_b = node_b.parent
-while node_a != node_b:
-	node_a = node_a.parent
-	node_b = node_b.parent
-return node_a
+	for _ in range(h_a - h_b):
+		node_b = node_b.parent
+	while node_a != node_b:
+		node_a = node_a.parent
+		node_b = node_b.parent
+	return node_a
 
 
 def height(root, node):
@@ -39,3 +39,18 @@ def height(root, node):
 		node =  node.parent
 		h += 1
 	return h
+
+#LCA III
+# if not exist
+def LCAIII(root, a, b):
+	result = LCA(root, a, b)
+	if results != a and results != b:
+		return results
+	elif results == a:
+		if LCA(a, b, b) == a:
+			return a
+	elif results == b:
+		if LCA(b, a, a) == b:
+			return b
+	else:
+		return None
