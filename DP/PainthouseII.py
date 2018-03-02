@@ -10,7 +10,7 @@ class Solution(object):
         n, k = len(costs), len(costs[0])
         min1, min2 = -1, -1  #store the min and the second min
         for i in range(n):
-            last1, last2 = min1, min2
+            last1, last2 = min1, min2 #save the min from last house: updating this house
             min1, min2 = -1, -1
             for j in range(k):
                 if j != last1:  #if this color is not the min color then use it
