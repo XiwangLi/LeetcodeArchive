@@ -45,3 +45,25 @@ class Solution:
         for i in range(n - 1):
             mx = max(leftMax[i]+rightMax[i], mx)
         return mx
+    
+    # The n2 method is easy to think of
+         if not nums: return 0
+        left = [0] * len(nums)
+        right = [0] * len(nums)
+        for i in range(len(nums) - 1):
+            left[i] = self.maxSubArray(nums[: i + 1])  #find the maxSubarry for from left
+            right[i] = self.maxSubArray(nums[i + 1 : ])  #find the maxSubarry for from right
+        maxSum =  -float('inf')
+        for i in range(len(left) - 1):
+            currsum = left[i] + right[i]
+            maxSum = max(maxSum, currsum)
+        return maxSum
+    
+    
+    def maxSubArray(self, nums):
+        if not nums: return 0
+        cSum= gmax = -float('inf')
+        for i in range(len(nums)):
+            cSum = max(cSum + nums[i], nums[i])
+            gmax = max(gmax, cSum)
+        return gmax
