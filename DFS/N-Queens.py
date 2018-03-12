@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #N-Queens
 def solveNQueens(n):
 	res = []
@@ -53,4 +52,3 @@ def notCheck(pos, irow):
 
 solveNQueens(4)
 # it output: [['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']] 
->>>>>>> 4534c4d4e0887979770f111ec3d1ea09d73c6e19
