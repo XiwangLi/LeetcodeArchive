@@ -4,7 +4,7 @@ class Solution:
     @return: nothing
     """
 # I have to say, I cannot find the solution myself. I found the ideas from other people
-# The logic is find traverse backward to find out index i where nums[i] < nums[i  + 1]
+# The logic is to traverse backward to find out index i where nums[i] < nums[i  + 1]
 # then find the first index j (from backward), where nums[j] > nums[i]
 # then reverse nums[i : j]
     def nextPermutation(self, nums):
