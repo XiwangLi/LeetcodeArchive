@@ -12,7 +12,7 @@ def merge_sort(A, start, end, temp):
     mid = (start + end) / 2
     merge_sort(A, start, mid, temp)
     merge_sort(A, mid + 1, end, temp)
-    merge(A, start, mid, end,temp)
+    merge(A, start, mid, end, temp)
         
 def merge(A, start, mid, end, temp):
     left, right = start, mid + 1
