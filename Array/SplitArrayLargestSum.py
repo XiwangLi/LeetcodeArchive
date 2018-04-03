@@ -6,14 +6,17 @@ class Solution(object):
         :rtype: int
         """
         left, right = max(nums), sum(nums)
-        while left <= right:
+        while left + 1 < right:
             mid = left + (right - left) / 2
             if self.validcut(nums, m, mid):
-                right = mid - 1
+                right = mid
             else:
-                left = mid + 1
-        return left
-    
+                left = mid
+        if self.validcut(nums, m, left):
+            return left
+        if self.validcut(nums, m, right):
+            return right
+        
     def validcut(self, nums, m, maxsum):
         totalsum, count = 0, 1
         for i in range(len(nums)):
