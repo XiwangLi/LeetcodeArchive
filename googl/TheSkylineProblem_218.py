@@ -9,12 +9,12 @@ class Solution(object):
         res, hqHR = [[0, 0]], [(0, float('inf'))] # hqHR (negH, R)
         
         for x, negH, R in events:
-            while x >= hqHR[0][1]:
+            while x >= hqHR[0][1]:  #if it is the end point, then use the "second hight point"
                 heapq.heappop(hqHR)
             
             if negH:
                 heapq.heappush(hqHR, (negH, R))
-            if res[-1][1] + hqHR[0][0]:
+            if res[-1][1] + hqHR[0][0]: #if it is the starting point, use the highest point
                 res += [x, -hqHR[0][0]],
         return res[1:]
 
