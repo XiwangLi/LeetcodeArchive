@@ -60,40 +60,6 @@ class Solution(object):
         return sum(stack)
 
 
-    def calculate2(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        if not s: return 0
-        num, sign, stack = 0, '+', []
-        for i in range(len(s)):
-            if s[i].isdigit():
-                num = num * 10 + int(s[i])
-            if (not s[i].isdigit() and not s[i].isspace()) or i == len(s) - 1:
-            	print 'test'
-                if sign == '+':
-                    stack.append(num)
-                elif sign == '-':
-                    stack.append(-num)
-                elif sign == '*':
-                    stack.append(stack.pop() * num)
-                else: # '/'
-                    temp = stack.pop()
-                    if temp == 0:
-                    	signloc = 0
-                    elif temp > 0:
-                    	signloc = 1
-                    else: 
-                    	signloc = -1
-                    #sign = cmp (temp, 0)
-                    stack.append(signloc * (abs(temp) / num))
-                sign = s[i]
-                print sign, stack
-                num = 0
-        	return sum(stack)
-
-
 
 
 model = Solution()
